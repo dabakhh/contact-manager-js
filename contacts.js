@@ -34,32 +34,42 @@ let contactArray = [contact1, contact2, contact3, contact4];
 // 1 - Add contact
 
 // Function which create contact
-function createContact() {
-    const callButton = document.querySelector("#create"); // constant which select the button for calling it
-    callButton.addEventListener("click", () => { //event which taked when someone click to the button
-        
-        console.log("Vous êtes entrain d'ajouter un contact.");
-        let contactX = {
-        first_name: prompt("Entrer votre prénom: "),
-        name: prompt("Entrer votre nom: "),
-        age: prompt("Entrer votre âge: "),
-        mail: prompt("Entrer votre mail: "),
-        tel: prompt("Entrer votre numéro de téléphone: ")
-        };
-    });
-    return contactX
+function createContact() {        
+    alert("Vous êtes entrain d'ajouter un contact.");
+    let contactX = {
+    first_name: prompt("Entrer votre prénom: "),
+    name: prompt("Entrer votre nom: "),
+    age: +prompt("Entrer votre âge: "), // Return NAN if the string is invalid
+    mail: prompt("Entrer votre mail: "),
+    tel: +prompt("Entrer votre numéro de téléphone: ") // Return NAN if the string is invalid
+    };
+    console.log("Contact successfully created!👇")
+    console.log(contactX);
+    return contactX; //return the contact as an object 
 }
 // Function which add contact in the contactArray
-// function addContact(table, fonction) {
-//     const callButton = document.querySelector("#add");
-//     callButton.addEventListener("click", () => {
-//         table.push(fonction);
-//         console.log(table);
-//     })
-// };
-// addContact(contactArray, createContact());
+function addContact(table, fonction) {
+    table.push(fonction);
+};
 
-// 2 - Show constacts
+// Select the button for calling it
+const callButton = document.querySelector("#create"); 
+callButton.addEventListener("click", () => {
+    addContact(contactArray, createContact());
+    });
+
+// 2 - Show contacts
+function showContacts() {
+    contactArray.forEach(element => { // Show contact one by one
+        console.log(element)
+    });
+}
+const callShowbtn = document.querySelector("#showbtn")
+callShowbtn.addEventListener("click", () => {
+    console.log("Voici la liste des contacts: ")
+    showContacts() // Execute the showContact function
+});
 // 3 - Research contact
+
 // 4 - Remove contact
 // 5 - Statistics (number of contacts & average age)

@@ -70,6 +70,20 @@ callShowbtn.addEventListener("click", () => {
     showContacts() // Execute the showContact function
 });
 // 3 - Research contact
-
+const callSearchbtn = document.getElementById("searchbtn");
+callSearchbtn.addEventListener("click", () => {
+    callSearchbtn.style.backgroundColor="skyblue";
+    function searchContact(tasklist, contact) {
+    let actif = 0;
+    tasklist.forEach(element => {
+        if (contact == element.first_name) {
+            console.log(element);
+        }
+        else actif++;
+    })
+    if (actif == tasklist.length) console.log("This contact does not exist!")
+}
+    searchContact(contactArray, prompt("Rechercher un contact."));
+});
 // 4 - Remove contact
 // 5 - Statistics (number of contacts & average age)

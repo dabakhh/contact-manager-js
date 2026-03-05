@@ -104,3 +104,21 @@ callrm.addEventListener("click", ()=>{
     removeContact(contactArray, prompt("Rechercher un contact.")); // Execute the searchfor function
 })
 // 5 - Statistics (number of contacts & average age)
+const callsta = document.getElementsByClassName("stabtn");
+callsta[0].style.backgroundColor="dodgerblue"; // Use the index because getElementsByClassName return a collection not a single element!
+// Total number of contacts
+function calcContact(contactlist){
+    return contactlist.length
+}
+// Average age
+function calcAverage(contactlist){
+    let sum = 0;
+    contactlist.forEach(element => {
+        sum += element.age
+    });
+    console.log("Total number of contacts: " + calcContact(contactArray));
+    console.log("Average age: " + parseInt(sum / contactlist.length));
+}
+calcAverage(contactArray)
+
+

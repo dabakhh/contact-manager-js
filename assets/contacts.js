@@ -55,6 +55,7 @@ function addContact(table, fonction) {
 // Select the button for calling it
 const callButton = document.querySelector("#create"); 
 callButton.addEventListener("click", () => {
+        callButton.style.backgroundColor="yellow";
     addContact(contactArray, createContact());
     });
 
@@ -66,6 +67,7 @@ function showContacts() {
 }
 const callShowbtn = document.querySelector("#showbtn")
 callShowbtn.addEventListener("click", () => {
+    callShowbtn.style.backgroundColor="yellow";
     console.log("Voici la liste des contacts: ")
     showContacts() // Execute the showContact function
 });
@@ -75,6 +77,7 @@ function searchContact(contactlist, contact) {
     let actif = 0;
     contactlist.forEach(element => {
         if (contact == element.first_name) {
+            console.log("Voici le contact recherché:👇")
             console.log(element);
         }
         else actif++;
@@ -82,7 +85,7 @@ function searchContact(contactlist, contact) {
     if (actif == contactlist.length) console.log("This contact does not exist!")
 };
 callSearchbtn.addEventListener("click", () => {
-    callSearchbtn.style.backgroundColor="skyblue";
+    callSearchbtn.style.backgroundColor="green";
     searchContact(contactArray, prompt("Rechercher un contact.")); // Execute the searchfor function
 });
 // 4 - Remove contact
@@ -93,6 +96,7 @@ function removeContact(contactlist, contact){
     contactlist.forEach(element => {
         if (contact == element.first_name) {
             contactlist.pop(element);
+            console.log("Contact succesfully deleted! Here is the new array👇")
             console.log(contactlist);
         }
         else actif++;
@@ -101,11 +105,10 @@ function removeContact(contactlist, contact){
 }
 callrm.addEventListener("click", ()=>{
     callrm.style.backgroundColor="yellow";
-    removeContact(contactArray, prompt("Rechercher un contact.")); // Execute the searchfor function
+    removeContact(contactArray, prompt("Rechercher le contact à supprimer:")); // Execute the searchfor function
 })
 // 5 - Statistics (number of contacts & average age)
 const callsta = document.getElementsByClassName("stabtn");
-callsta[0].style.backgroundColor="dodgerblue"; // Use the index because getElementsByClassName return a collection not a single element!
 // Total number of contacts
 function calcContact(contactlist){
     return contactlist.length
@@ -119,6 +122,8 @@ function calcAverage(contactlist){
     console.log("Total number of contacts: " + calcContact(contactArray));
     console.log("Average age: " + parseInt(sum / contactlist.length));
 }
-calcAverage(contactArray)
-
+callsta[0].addEventListener("click", ()=>{
+    callsta[0].style.backgroundColor="yellow"; // Use the index because getElementsByClassName return a collection not a single element!
+    calcAverage(contactArray)
+})
 

@@ -1,45 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon" />
     <title>Contact Manager</title>
-</head>
-<body>
-    <header style="color: aquamarine;background-color: darkslategrey;height: 100px;display: flex;">
-        <div><h1>📞 Contact Manager</h1></div>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1><i class="fa-regular fa-address-book"></i> Contact Manager</h1>
+      </div>
+      <div class="alert"><i class="fa-solid fa-circle-exclamation"></i><h3>Veuillez ouvrir la console</h3></div>
     </header>
 
-    <!-- addContact div  -->
-    <div>
-        <h2>Add contact</h2>
-        <button id="create">Add contact</button>
-    </div>
-
-    <!-- showContact div  -->
-    <div>
+    <section class="hero">
+      <!-- addContact div  -->
+      <div class="div">
         <h2>Show contacts</h2>
+        <div class="mid"><i class="fa-solid fa-circle-plus"></i></div>
+        <button id="create">Add contact</button>
+      </div>
+
+      <!-- showContact div  -->
+      <div class="div">
+        <h2>Show contacts</h2>
+        <div class="mid"><i class="fa-solid fa-pen-to-square"></i></div>
         <button id="showbtn">Show contacts</button>
-    </div>
+      </div>
 
-    <!-- searchContact div  -->
-    <div>
+      <!-- searchContact div  -->
+      <div class="div">
         <h2>Search for a contact</h2>
+        <div class="mid"><i class="fa-solid fa-magnifying-glass"></i></div>
         <button id="searchbtn">Search 🔍</button>
-    </div>
+      </div>
 
-    <!-- removeContact div  -->
-    <div>
+      <!-- removeContact div  -->
+      <div class="div">
         <h2>Remove a contact</h2>
+        <div class="mid"><i class="fa-solid fa-delete-left"></i></div>
         <button class="rmbtn">Remove</button>
-    </div>
+      </div>
 
-    <!-- statistics div  -->
-    <div>
+      <!-- statistics div  -->
+      <div class="div">
         <h2>Statistics</h2>
+        <div class="mid"><i class="fa-solid fa-people-line"></i></div>
         <button class="stabtn">Average age</button>
-    </div>
-    <script src="contacts.js"></script>
-</body>
+      </div>
+    </section>
+
+    <script src="assets/contacts.js"></script>
+  </body>
 </html>
